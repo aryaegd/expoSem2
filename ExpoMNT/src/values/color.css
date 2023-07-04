@@ -1,0 +1,56 @@
+.backgroundColor{
+    -fx-background-color:#006035;
+}
+
+#btnSignIn{
+    -fx-background-color: #198050; 
+}
+
+#btnSignUpInst{
+    -fx-background-color: #19805000;
+}
+
+
+#btnRT{
+    -fx-background-radius: 337.5;
+    -fx-border-radius: 337.5;
+    -fx-pref-width: 350;
+    -fx-pref-height: 350;
+    -fx-background-color: #7a807b39; 
+    -fx-border-color: #ffff       
+}
+
+#btnPG{
+    -fx-background-radius: 337.5;
+    -fx-border-radius: 337.5;
+    -fx-pref-width: 350;
+    -fx-pref-height: 350;
+    -fx-background-color: #7a807b39; 
+    -fx-border-color: #ffff         
+}
+
+#paneSwitch{
+    -fx-background-color: #ffffff;
+
+}
+
+#tfUname{
+    -fx-background-color: #ffffff;
+    -fx-border-color: #a3a3a3;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+}
+
+#pfPass{
+    -fx-background-color: #ffffff;
+    -fx-border-color: #a3a3a3;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+
+}
+
+#bgLgn{
+    -fx-background-color: #006035;
+    -fx-border-radius: 15;
+    -fx-background-radius: 50; 
+}

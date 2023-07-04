@@ -1,0 +1,11 @@
+<LoginData>
+    <User>
+        <Username>admin</Username>
+        <Password>admin123</Password>
+    </User>
+    <User>
+        <Username>user1</Username>
+        <Password>password1</Password>
+    </User>
+    <!-- Tambahkan data pengguna lain di sini jika diperlukan -->
+</LoginData>

@@ -1,0 +1,7 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\Aryae\\Downloads\\College Essential Apps\\mysql-connector-j-8.0.33\\mysql-connector-j-8.0.33\\mysql-connector-j-8.0.33.jar",
+        "c:\\Users\\Aryae\\Downloads\\College Essential Apps\\xstream-1.4.20.jar"
+    ]
+}
