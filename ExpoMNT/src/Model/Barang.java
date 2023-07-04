@@ -1,80 +1,56 @@
 package Model;
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import javafx.beans.property.*;
-
-@XStreamAlias("barang")
 public class Barang {
-    private StringProperty kode;
-    private StringProperty nama;
-    private StringProperty jenis;
-    private DoubleProperty berat;
-    private StringProperty lokasi;
+    private int kodeBrg;
+    private String namaBrg;
+    private String jenisBrg;
+    private double beratBrg;
+    private String lokasiBrg;
 
-    public Barang(String kode, String nama, String jenis, double berat, String lokasi) {
-        this.kode = new SimpleStringProperty(kode);
-        this.nama = new SimpleStringProperty(nama);
-        this.jenis = new SimpleStringProperty(jenis);
-        this.berat = new SimpleDoubleProperty(berat);
-        this.lokasi = new SimpleStringProperty(lokasi);
+    public Barang(int kodeBrg, String namaBrg, String jenisBrg, double beratBrg, String lokasiBrg) {
+        this.kodeBrg = kodeBrg;
+        this.namaBrg = namaBrg;
+        this.jenisBrg = jenisBrg;
+        this.beratBrg = beratBrg;
+        this.lokasiBrg = lokasiBrg;
     }
 
-    public StringProperty kodeProperty() {
-        return kode;
+    public int getKodeBrg() {
+        return kodeBrg;
     }
 
-    public String getKode() {
-        return kode.get();
+    public void setKodeBrg(int kodeBrg) {
+        this.kodeBrg = kodeBrg;
     }
 
-    public void setKode(String kode) {
-        this.kode.set(kode);
+    public String getNamaBrg() {
+        return namaBrg;
     }
 
-    public StringProperty namaProperty() {
-        return nama;
+    public void setNamaBrg(String namaBrg) {
+        this.namaBrg = namaBrg;
     }
 
-    public String getNama() {
-        return nama.get();
+    public String getJenisBrg() {
+        return jenisBrg;
     }
 
-    public void setNama(String nama) {
-        this.nama.set(nama);
+    public void setJenisBrg(String jenisBrg) {
+        this.jenisBrg = jenisBrg;
     }
 
-    public StringProperty jenisProperty() {
-        return jenis;
+    public double getBeratBrg() {
+        return beratBrg;
     }
 
-    public String getJenis() {
-        return jenis.get();
+    public void setBeratBrg(double beratBrg) {
+        this.beratBrg = beratBrg;
     }
 
-    public void setJenis(String jenis) {
-        this.jenis.set(jenis);
+    public String getLokasiBrg() {
+        return lokasiBrg;
     }
 
-    public DoubleProperty beratProperty() {
-        return berat;
-    }
-
-    public double getBerat() {
-        return berat.get();
-    }
-
-    public void setBerat(double berat) {
-        this.berat.set(berat);
-    }
-
-    public StringProperty lokasiProperty() {
-        return lokasi;
-    }
-
-    public String getLokasi() {
-        return lokasi.get();
-    }
-
-    public void setLokasi(String lokasi) {
-        this.lokasi.set(lokasi);
+    public void setLokasiBrg(String lokasiBrg) {
+        this.lokasiBrg = lokasiBrg;
     }
 }

@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DashboardRTCont">
@@ -38,7 +37,7 @@
                   <Image url="@../img/logo.png" />
                </image>
             </ImageView>
-            <Label layoutX="49.0" layoutY="242.0" text="Your Dashboard">
+            <Label layoutX="49.0" layoutY="242.0" text="Your Dashboard" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -47,54 +46,48 @@
       </Pane>
       <Pane fx:id="pnlOverview" layoutX="250.0" layoutY="7.0" prefHeight="720.0" prefWidth="1030.0">
          <children>
-            <HBox alignment="CENTER_LEFT" layoutX="57.0" layoutY="87.0" prefHeight="136.0" prefWidth="896.0" spacing="50.0">
+            <HBox alignment="CENTER_LEFT" layoutX="65.0" layoutY="87.0" prefHeight="136.0" prefWidth="700.0" spacing="50.0">
                <children>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                  <Pane prefHeight="136.0" prefWidth="700.0">
                      <children>
-                        <Label fx:id="lblTotalOrders" text="0" textFill="#2a73ff">
+                        <Label layoutX="14.0" layoutY="53.0" prefHeight="32.0" prefWidth="169.0" text="Anda memiliki">
+                           <font>
+                              <Font name="Segoe UI" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblYourProduct" layoutX="192.0" layoutY="32.0" prefHeight="73.0" prefWidth="0.0" text="0" textFill="#26bfbc">
                            <font>
                               <Font name="System Bold" size="50.0" />
                            </font>
                         </Label>
-                        <Label text="Total Orders">
+                        <Label layoutX="236.0" layoutY="53.0" prefHeight="32.0" prefWidth="90.0" text="produk.">
                            <font>
-                              <Font size="18.0" />
-                           </font></Label>
-                     </children>
-                  </VBox>
-                  <VBox alignment="CENTER" prefHeight="136.0" prefWidth="116.0">
-                     <children>
-                        <Label fx:id="lblYourProduct" text="0" textFill="#26bfbc">
-                           <font>
-                              <Font name="System Bold" size="50.0" />
+                              <Font name="Segoe UI" size="25.0" />
                            </font>
                         </Label>
-                        <Label text="Your Product">
-                           <font>
-                              <Font size="18.0" />
-                           </font></Label>
                      </children>
-                  </VBox>
+                  </Pane>
                </children>
             </HBox>
-            <ScrollPane layoutX="57.0" layoutY="260.0" prefHeight="385.0" prefWidth="700.0">
+            <ScrollPane layoutX="57.0" layoutY="199.0" prefHeight="435.0" prefWidth="700.0">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="385.0" prefWidth="700.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="435.0" prefWidth="700.0">
                      <children>
-                        <TableView fx:id="tableView" prefHeight="385.0" prefWidth="700.0" stylesheets="@../values/DashboardRT.css">
+                        <TableView fx:id="tvListBrg" prefHeight="435.0" prefWidth="700.0" stylesheets="@../values/DashboardRT.css">
                            <columns>
-                              <TableColumn fx:id="colKode" prefWidth="55.999969482421875" text="Kode" />
-                              <TableColumn fx:id="colNama" prefWidth="167.99996948242188" text="Nama Barang" />
-                              <TableColumn fx:id="colJenis" prefWidth="131.3333740234375" text="Jenis" />
-                              <TableColumn fx:id="colBerat" minWidth="6.6666259765625" prefWidth="128.00006103515625" text="Berat" />
-                              <TableColumn fx:id="colLokasi" prefWidth="212.6666259765625" text="Lokasi" />
+                              <TableColumn fx:id="colKode" prefWidth="47.0" text="Kode" />
+                              <TableColumn fx:id="colNama" prefWidth="147.0" text="Nama Barang" />
+                              <TableColumn fx:id="colJenis" prefWidth="106.0" text="Jenis" />
+                              <TableColumn fx:id="colBerat" minWidth="6.6666259765625" prefWidth="89.0" text="Berat" />
+                              <TableColumn fx:id="colLokasi" maxWidth="211.0" prefWidth="160.0" text="Lokasi" />
+                              <TableColumn fx:id="colKode1" minWidth="0.0" prefWidth="134.0" text="Tawaran Harga" />
                            </columns>
                         </TableView>
                      </children>
                   </AnchorPane>
               </content>
             </ScrollPane>
-            <Pane fx:id="pnFormTbh" layoutX="773.0" layoutY="260.0" prefHeight="384.0" prefWidth="243.0">
+            <Pane fx:id="pnFormTbh" layoutX="773.0" layoutY="225.0" prefHeight="384.0" prefWidth="243.0">
                <children>
                   <Label layoutX="14.0" layoutY="23.0" text="Kode Barang" />
                   <TextField fx:id="tfKodeBrg" layoutX="14.0" layoutY="50.0" prefHeight="25.0" prefWidth="216.0" />
@@ -109,7 +102,8 @@
                   <Button fx:id="btnTbhBrg" layoutX="96.0" layoutY="339.0" mnemonicParsing="false" onAction="#tbhBrg" text="Add" />
                </children>
             </Pane>
-            <Label fx:id="lblDashboard" layoutX="57.0" layoutY="29.0" text="Good Day, xxx" textFill="#70fd70">
+            <Pane layoutX="57.0" layoutY="60.0" prefHeight="25.0" prefWidth="305.0" style="-fx-background-color: #f9d368;" />
+            <Label fx:id="lblDashboard" layoutX="57.0" layoutY="29.0" text="Selamat datang." textFill="#45d22d">
                <font>
                   <Font name="System Bold" size="40.0" />
                </font>

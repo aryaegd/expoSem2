@@ -54,9 +54,6 @@ public class DashboardRTCont {
     private Pane pnlOverview;
 
     @FXML
-    private TableView<?> tableView;
-
-    @FXML
     private TextField tfBeratBrg;
 
     @FXML
@@ -70,6 +67,9 @@ public class DashboardRTCont {
 
     @FXML
     private TextField tfNamaBrg;
+
+    @FXML
+    private TableView<?> tvListBrg;
 
     @FXML
     void List(ActionEvent event) {
