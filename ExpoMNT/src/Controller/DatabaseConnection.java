@@ -3,6 +3,7 @@ package Controller;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+//For login database
 
 public class DatabaseConnection {
     public Connection databaseLink;

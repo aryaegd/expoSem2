@@ -80,7 +80,7 @@
                               <TableColumn fx:id="colJenis" prefWidth="106.0" text="Jenis" />
                               <TableColumn fx:id="colBerat" minWidth="6.6666259765625" prefWidth="89.0" text="Berat" />
                               <TableColumn fx:id="colLokasi" maxWidth="211.0" prefWidth="160.0" text="Lokasi" />
-                              <TableColumn fx:id="colKode1" minWidth="0.0" prefWidth="134.0" text="Tawaran Harga" />
+                              <TableColumn fx:id="colHarga" minWidth="0.0" prefWidth="134.0" text="Tawaran Harga" />
                            </columns>
                         </TableView>
                      </children>

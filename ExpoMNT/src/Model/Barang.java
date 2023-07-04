@@ -1,24 +1,27 @@
 package Model;
+
 public class Barang {
-    private int kodeBrg;
+    private String kodeBrg;
     private String namaBrg;
     private String jenisBrg;
     private double beratBrg;
     private String lokasiBrg;
+    private Double hargaBrg;
 
-    public Barang(int kodeBrg, String namaBrg, String jenisBrg, double beratBrg, String lokasiBrg) {
+    public Barang(String kodeBrg, String namaBrg, String jenisBrg, double beratBrg, String lokasiBrg, Double hargaBrg) {
         this.kodeBrg = kodeBrg;
         this.namaBrg = namaBrg;
         this.jenisBrg = jenisBrg;
         this.beratBrg = beratBrg;
         this.lokasiBrg = lokasiBrg;
+        this.hargaBrg = hargaBrg;
     }
 
-    public int getKodeBrg() {
+    public String getKodeBrg() {
         return kodeBrg;
     }
 
-    public void setKodeBrg(int kodeBrg) {
+    public void setKodeBrg(String kodeBrg) {
         this.kodeBrg = kodeBrg;
     }
 
@@ -53,4 +56,14 @@ public class Barang {
     public void setLokasiBrg(String lokasiBrg) {
         this.lokasiBrg = lokasiBrg;
     }
+
+    public Double getHargaBrg() {
+        return hargaBrg;
+    }
+
+    public void setHargaBrg(Double hargaBrg) {
+        this.hargaBrg = hargaBrg;
+    }
+
+    
 }
