@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../values/CariBarangP.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CariBarangPengepulCont">
+   <children>
+      <Pane layoutX="23.0" layoutY="16.0" prefHeight="688.0" prefWidth="322.0" style="-fx-background-color: #e3a20a; -fx-background-radius: 20;" AnchorPane.bottomAnchor="16.0">
+         <children>
+            <Button fx:id="btnBalikDashboardPengepul" layoutX="113.0" layoutY="563.0" mnemonicParsing="false" onAction="#balikDashboardPengepul" prefHeight="50.0" prefWidth="97.0" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <TextField fx:id="tfDataNamaBrg" layoutX="79.0" layoutY="243.0" prefHeight="28.0" prefWidth="167.0" style="-fx-background-radius: 15;" />
+            <Label layoutX="113.0" layoutY="214.0" text="Nama Barang" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfDataJenisBrg" layoutX="77.0" layoutY="308.0" prefHeight="28.0" prefWidth="167.0" style="-fx-background-radius: 15;" />
+            <Label layoutX="143.0" layoutY="281.0" text="Jenis" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfDataBeratBrg" layoutX="77.0" layoutY="377.0" prefHeight="28.0" prefWidth="167.0" style="-fx-background-radius: 15;" />
+            <Label layoutX="141.0" layoutY="349.0" text="Berat" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Pane layoutX="68.0" layoutY="86.0" prefHeight="66.0" prefWidth="187.0" style="-fx-background-color: wHITE; -fx-background-radius: 20;">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="45.0" prefWidth="167.0" text="Cari Barang" textFill="#e3a20a">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <TextField fx:id="tfDataLokasiBrg" layoutX="77.0" layoutY="447.0" prefHeight="28.0" prefWidth="167.0" style="-fx-background-radius: 15;" />
+            <Label layoutX="137.0" layoutY="420.0" text="Lokasi" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="378.0" layoutY="51.0" text="Cari Barang" textFill="#e3a20a">
+         <font>
+            <Font name="System Bold" size="45.0" />
+         </font>
+      </Label>
+      <Label layoutX="378.0" layoutY="117.0" text="Masukkan lokasi anda." textFill="#e3a20a">
+         <font>
+            <Font name="System Italic" size="19.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="417.0" layoutY="188.0" prefHeight="435.0" prefWidth="700.0">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="435.0" prefWidth="700.0">
+               <children>
+                  <TableView fx:id="tvListBrg" prefHeight="435.0" prefWidth="700.0" stylesheets="@../values/CariBarangP.css">
+                     <columns>
+                        <TableColumn fx:id="colKode" prefWidth="47.0" text="Kode" />
+                        <TableColumn fx:id="colNama" prefWidth="147.0" text="Nama Barang" />
+                        <TableColumn fx:id="colJenis" prefWidth="106.0" text="Jenis" />
+                        <TableColumn fx:id="colBerat" minWidth="6.6666259765625" prefWidth="89.0" text="Berat" />
+                        <TableColumn fx:id="colLokasi" maxWidth="211.0" prefWidth="160.0" text="Lokasi" />
+                        <TableColumn fx:id="colHarga" minWidth="0.0" prefWidth="134.0" text="Tawaran Harga" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <TextField fx:id="tfCariBrg" layoutX="894.0" layoutY="147.0" style="-fx-background-radius: 15;" />
+      <Label layoutX="894.0" layoutY="119.0" text="Dimana anda berada?" textFill="#e3a20a">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfKodeBrgP" layoutX="417.0" layoutY="660.0" style="-fx-background-radius: 15;" />
+      <Label layoutX="417.0" layoutY="632.0" text="Masukkan kode barang" textFill="#e3a20a">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfTawaran" layoutX="907.0" layoutY="662.0" prefHeight="25.0" prefWidth="167.0" style="-fx-background-radius: 15;" />
+      <Label layoutX="907.0" layoutY="634.0" text="Masukkan tawaran harga" textFill="#e3a20a">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnTawaran" layoutX="1082.0" layoutY="659.0" mnemonicParsing="false" onAction="#masukTawaran" prefHeight="27.0" prefWidth="35.0" text="OK" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnCariKodeBrg" layoutX="580.0" layoutY="659.0" mnemonicParsing="false" onAction="#cariKodeBrg" text="OK" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnCariBrgLokasi" layoutX="1057.0" layoutY="146.0" mnemonicParsing="false" onAction="#cariBrgLokasi" text="Cari" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <ImageView fitHeight="96.0" fitWidth="97.0" layoutX="632.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/magnifier%20(2).png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

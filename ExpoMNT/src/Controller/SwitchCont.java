@@ -46,15 +46,15 @@ public class SwitchCont {
 
     @FXML
     void PG(ActionEvent event) {
-        // try {
-        //     root = FXMLLoader.load(getClass().getResource("../Views/Login.fxml"));
-        //     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        //     scene = new Scene(root);
-        //     stage.setScene(scene);
-        //     stage.show();
-        // } catch (IOException e) {
-        //     e.printStackTrace();
-        // }
+        try {
+            root = FXMLLoader.load(getClass().getResource("../Views/LoginPengepul.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

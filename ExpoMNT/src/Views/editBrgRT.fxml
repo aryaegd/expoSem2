@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../values/DashboardRT.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.EditBrgCont">
+   <children>
+      <Pane layoutX="23.0" layoutY="16.0" prefHeight="688.0" prefWidth="322.0" style="-fx-background-color: #007e32; -fx-background-radius: 30;">
+         <children>
+            <Button layoutX="103.0" layoutY="598.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="117.0" text="Transaksi" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="btnBalikDashboardRT" layoutX="103.0" layoutY="535.0" mnemonicParsing="false" onAction="#balikDashRT" prefHeight="51.0" prefWidth="117.0" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <Pane fx:id="pnFormEdt" layoutX="40.0" layoutY="59.0" prefHeight="416.0" prefWidth="243.0" style="-fx-background-color: #00b706; -fx-background-radius: 10;">
+               <children>
+                  <Label layoutX="72.0" layoutY="22.0" text="Kode Barang" textFill="#ffee00">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></Label>
+                  <TextField fx:id="tfEdKodeBrg" layoutX="59.0" layoutY="51.0" prefHeight="25.0" prefWidth="127.0" style="-fx-background-radius: 15; -fx-background-color: white;" />
+                  <Label layoutX="14.0" layoutY="123.0" text="Nama Barang" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <TextField fx:id="tfEdNamaBrg" layoutX="14.0" layoutY="150.0" prefHeight="25.0" prefWidth="216.0" style="-fx-background-radius: 15; -fx-background-color: white;" />
+                  <Label layoutX="14.0" layoutY="187.0" text="Jenis" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <TextField fx:id="tfEdJenisBrg" layoutX="14.0" layoutY="214.0" prefHeight="25.0" prefWidth="216.0" style="-fx-background-radius: 15; -fx-background-color: white;" />
+                  <Label layoutX="14.0" layoutY="250.0" text="Berat" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <TextField fx:id="tfEdBeratBrg" layoutX="14.0" layoutY="277.0" prefHeight="25.0" prefWidth="216.0" style="-fx-background-radius: 15; -fx-background-color: white;" />
+                  <Label layoutX="14.0" layoutY="314.0" text="Lokasi" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfEdLokBrg" layoutX="14.0" layoutY="341.0" prefHeight="25.0" prefWidth="216.0" style="-fx-background-radius: 15; -fx-background-color: white;" />
+                  <Button fx:id="btnEdBrg" layoutX="100.0" layoutY="379.0" mnemonicParsing="false" onAction="#editBrg" text="Edit" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Button>
+                  <Button fx:id="btnCariEdBrg" layoutX="100.0" layoutY="82.0" mnemonicParsing="false" onAction="#cariEdBrg" text="Cari" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Button>
+                  <TextField fx:id="tfEdHargaBrg" layoutX="178.0" layoutY="310.0" opacity="0.0" prefHeight="25.0" prefWidth="52.0" />
+               </children>
+            </Pane>
+            <Button fx:id="btnHapusBrg" layoutX="237.0" layoutY="484.0" mnemonicParsing="false" onAction="#hapusBrg" prefHeight="25.0" prefWidth="28.0" style="-fx-background-radius: 15;" text="X" textFill="#ff4a00">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="193.0" layoutY="492.0" text="Hapus" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ScrollPane layoutX="475.0" layoutY="143.0" prefHeight="435.0" prefWidth="700.0">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="435.0" prefWidth="700.0">
+               <children>
+                  <TableView fx:id="tvListBrg" prefHeight="435.0" prefWidth="700.0" stylesheets="@../values/DashboardRT.css">
+                     <columns>
+                        <TableColumn fx:id="colKode" prefWidth="47.0" text="Kode" />
+                        <TableColumn fx:id="colNama" prefWidth="147.0" text="Nama Barang" />
+                        <TableColumn fx:id="colJenis" prefWidth="106.0" text="Jenis" />
+                        <TableColumn fx:id="colBerat" minWidth="6.6666259765625" prefWidth="89.0" text="Berat" />
+                        <TableColumn fx:id="colLokasi" maxWidth="211.0" prefWidth="160.0" text="Lokasi" />
+                        <TableColumn fx:id="colHarga" minWidth="0.0" prefWidth="134.0" text="Tawaran Harga" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <Pane layoutX="552.0" layoutY="30.0" prefHeight="86.0" prefWidth="547.0" style="-fx-background-color: #007e32; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="37.0" layoutY="18.0" text="Edit atau Hapus Barang Anda" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ImageView fitHeight="86.0" fitWidth="96.0" layoutX="1167.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="1152.0" layoutY="686.0" text="Trashure by Manut" textFill="#e3a20a">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
