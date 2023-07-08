@@ -32,6 +32,12 @@ public class LoginCont {
     private Button btnSignIn;
 
     @FXML
+    private Button btnBalikSwitch;
+
+    @FXML
+    private Button btnSignUpInst;
+
+    @FXML
     private PasswordField pfPass;
 
     @FXML
@@ -81,4 +87,14 @@ public class LoginCont {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    void balikSwitch(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("../Views/Switch.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }

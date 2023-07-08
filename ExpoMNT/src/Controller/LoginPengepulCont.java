@@ -31,6 +31,9 @@ public class LoginPengepulCont {
     private Button btnSignUpInst;
 
     @FXML
+    private Button btnBalikSwitch;
+
+    @FXML
     private Label lbLogin;
 
     @FXML
@@ -79,8 +82,21 @@ public class LoginPengepulCont {
     }
 
     @FXML
-    void sgnUp(ActionEvent event) {
+    void sgnUp(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("../Views/SignUpPengepul.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
+    @FXML
+    void balikSwitch(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("../Views/Switch.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

@@ -16,11 +16,7 @@
    <children>
       <Pane layoutX="23.0" layoutY="16.0" prefHeight="688.0" prefWidth="322.0" style="-fx-background-color: #007e32; -fx-background-radius: 30;">
          <children>
-            <Button layoutX="103.0" layoutY="598.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="117.0" text="Transaksi" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font></Button>
-            <Button fx:id="btnBalikDashboardRT" layoutX="103.0" layoutY="535.0" mnemonicParsing="false" onAction="#balikDashRT" prefHeight="51.0" prefWidth="117.0" text="Dashboard" textFill="WHITE">
+            <Button fx:id="btnBalikDashboardRT" layoutX="103.0" layoutY="556.0" mnemonicParsing="false" onAction="#balikDashRT" prefHeight="51.0" prefWidth="117.0" text="Dashboard" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Button>
@@ -75,7 +71,7 @@
             </Label>
          </children>
       </Pane>
-      <ScrollPane layoutX="475.0" layoutY="143.0" prefHeight="435.0" prefWidth="700.0">
+      <ScrollPane layoutX="458.0" layoutY="143.0" prefHeight="435.0" prefWidth="700.0">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="435.0" prefWidth="700.0">
                <children>
@@ -84,16 +80,16 @@
                         <TableColumn fx:id="colKode" prefWidth="47.0" text="Kode" />
                         <TableColumn fx:id="colNama" prefWidth="147.0" text="Nama Barang" />
                         <TableColumn fx:id="colJenis" prefWidth="106.0" text="Jenis" />
-                        <TableColumn fx:id="colBerat" minWidth="6.6666259765625" prefWidth="89.0" text="Berat" />
+                        <TableColumn fx:id="colBerat" minWidth="6.6666259765625" prefWidth="89.0" text="Berat (Kg)" />
                         <TableColumn fx:id="colLokasi" maxWidth="211.0" prefWidth="160.0" text="Lokasi" />
-                        <TableColumn fx:id="colHarga" minWidth="0.0" prefWidth="134.0" text="Tawaran Harga" />
+                        <TableColumn fx:id="colHarga" minWidth="0.0" prefWidth="134.0" text="Tawaran Harga (Rp)" />
                      </columns>
                   </TableView>
                </children>
             </AnchorPane>
          </content>
       </ScrollPane>
-      <Pane layoutX="552.0" layoutY="30.0" prefHeight="86.0" prefWidth="547.0" style="-fx-background-color: #007e32; -fx-background-radius: 30;">
+      <Pane layoutX="535.0" layoutY="32.0" prefHeight="86.0" prefWidth="547.0" style="-fx-background-color: #007e32; -fx-background-radius: 30;">
          <children>
             <Label layoutX="37.0" layoutY="18.0" text="Edit atau Hapus Barang Anda" textFill="WHITE">
                <font>
@@ -107,10 +103,5 @@
             <Image url="@../img/logo.png" />
          </image>
       </ImageView>
-      <Label layoutX="1152.0" layoutY="686.0" text="Trashure by Manut" textFill="#e3a20a">
-         <font>
-            <Font name="System Italic" size="14.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>

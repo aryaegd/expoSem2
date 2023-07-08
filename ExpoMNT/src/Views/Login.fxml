@@ -36,17 +36,17 @@
                               <Font name="Segoe UI Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="276.0" layoutY="220.0" text="Welcome" textFill="WHITE">
+                        <Label layoutX="239.0" layoutY="220.0" text="Selamat datang" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Bold" size="25.0" />
                            </font>
                         </Label>
-                        <Button fx:id="btnSignIn" layoutX="296.0" layoutY="452.0" mnemonicParsing="false" onAction="#SignIn" style="-fx-background-radius: 100;" stylesheets="@../values/color.css" text="Sign In" textFill="WHITE">
+                        <Button fx:id="btnSignIn" layoutX="298.0" layoutY="452.0" mnemonicParsing="false" onAction="#SignIn" style="-fx-background-radius: 100;" stylesheets="@../values/color.css" text="Masuk" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Bold" size="15.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnSignUpInst" layoutX="278.0" layoutY="494.0" mnemonicParsing="false" onAction="#sgnUp" stylesheets="@../values/color.css" text="Sign Up Instead" textFill="WHITE">
+                        <Button fx:id="btnSignUpInst" layoutX="271.0" layoutY="494.0" mnemonicParsing="false" onAction="#sgnUp" stylesheets="@../values/color.css" text="Atau daftar di sini." textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -58,6 +58,11 @@
                         </Label>
                      </children>
                   </Pane>
+                  <Button fx:id="btnBalikSwitch" layoutX="600.0" layoutY="651.0" mnemonicParsing="false" onAction="#balikSwitch" stylesheets="@../values/DashboardRT.css" text="Kembali" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="15.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
          </center>

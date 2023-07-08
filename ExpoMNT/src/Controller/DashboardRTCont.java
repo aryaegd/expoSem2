@@ -33,9 +33,6 @@ public class DashboardRTCont implements Initializable {
     private Button btnPindahEdit;
 
     @FXML
-    private Button btnList;
-
-    @FXML
     private Button btnTbhBrg;
 
     @FXML
@@ -138,14 +135,6 @@ public class DashboardRTCont implements Initializable {
         }
     }
 
-
-
-
-    @FXML
-    void List(ActionEvent event) {
-
-    }
-
     @FXML
     void pindahEdit(ActionEvent event) {
         try {
@@ -161,7 +150,15 @@ public class DashboardRTCont implements Initializable {
 
     @FXML
     void daftarTrans(ActionEvent event) {
-
+        try {
+            root = FXMLLoader.load(getClass().getResource("/Views/TransaksiRT.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

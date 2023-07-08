@@ -17,17 +17,12 @@
    <children>
       <Pane layoutX="23.0" layoutY="16.0" prefHeight="688.0" prefWidth="322.0" style="-fx-background-color: #07861c; -fx-background-radius: 30;">
          <children>
-            <Button fx:id="btnPindahEdit" layoutX="86.0" layoutY="307.0" mnemonicParsing="false" onAction="#pindahEdit" prefHeight="54.0" prefWidth="150.0" stylesheets="@../values/DashboardRT.css" text="Edit" textFill="WHITE">
+            <Button fx:id="btnPindahEdit" layoutX="86.0" layoutY="305.0" mnemonicParsing="false" onAction="#pindahEdit" prefHeight="54.0" prefWidth="150.0" stylesheets="@../values/DashboardRT.css" text="Edit" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="btnList" layoutX="86.0" layoutY="374.0" mnemonicParsing="false" onAction="#List" prefHeight="54.0" prefWidth="150.0" stylesheets="@../values/DashboardRT.css" text="List" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnTransaksi" layoutX="86.0" layoutY="440.0" mnemonicParsing="false" onAction="#daftarTrans" prefHeight="54.0" prefWidth="150.0" stylesheets="@../values/DashboardRT.css" text="Transaksi" textFill="WHITE">
+            <Button fx:id="btnTransaksi" layoutX="86.0" layoutY="373.0" mnemonicParsing="false" onAction="#daftarTrans" prefHeight="54.0" prefWidth="150.0" stylesheets="@../values/DashboardRT.css" text="Transaksi" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -37,7 +32,7 @@
                   <Image url="@../img/logo.png" />
                </image>
             </ImageView>
-            <Label layoutX="72.0" layoutY="221.0" text="Rumah Tangga" textFill="WHITE">
+            <Label layoutX="72.0" layoutY="235.0" text="Rumah Tangga" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
@@ -83,9 +78,9 @@
                               <TableColumn fx:id="colKode" prefWidth="47.0" text="Kode" />
                               <TableColumn fx:id="colNama" prefWidth="147.0" text="Nama Barang" />
                               <TableColumn fx:id="colJenis" prefWidth="106.0" text="Jenis" />
-                              <TableColumn fx:id="colBerat" minWidth="6.6666259765625" prefWidth="89.0" text="Berat" />
+                              <TableColumn fx:id="colBerat" minWidth="6.6666259765625" prefWidth="89.0" text="Berat (Kg)" />
                               <TableColumn fx:id="colLokasi" maxWidth="211.0" prefWidth="160.0" text="Lokasi" />
-                              <TableColumn fx:id="colHarga" minWidth="0.0" prefWidth="134.0" text="Tawaran Harga" />
+                              <TableColumn fx:id="colHarga" minWidth="0.0" prefWidth="134.0" text="Tawaran Harga (Rp)" />
                            </columns>
                         </TableView>
                      </children>

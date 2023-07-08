@@ -14,7 +14,7 @@
    <children>
       <Pane fx:id="pnBgSignUp" layoutX="310.0" layoutY="90.0" prefHeight="540.0" prefWidth="660.0" style="-fx-background-color: #e3a20a; -fx-background-radius: 50;" AnchorPane.bottomAnchor="90.0">
          <children>
-            <Label layoutX="284.0" layoutY="179.0" text="Sign Up" textFill="WHITE">
+            <Label layoutX="201.0" layoutY="173.0" text="Daftar Akun Pengepul" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
@@ -37,7 +37,7 @@
                </font>
             </Label>
             <PasswordField fx:id="pfPassword" layoutX="156.0" layoutY="397.0" prefWidth="350.0" style="-fx-background-radius: 15;" />
-            <Button fx:id="btnSignUp" layoutX="288.0" layoutY="449.0" mnemonicParsing="false" onAction="#SignUp" prefHeight="19.0" prefWidth="84.0" style="-fx-background-radius: 100; -fx-background-color: #ae7e0e;" text="Sign Up" textFill="WHITE">
+            <Button fx:id="btnSignUp" layoutX="288.0" layoutY="443.0" mnemonicParsing="false" onAction="#SignUp" prefHeight="19.0" prefWidth="84.0" style="-fx-background-radius: 100; -fx-background-color: #ae7e0e;" text="Daftar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font></Button>
@@ -46,7 +46,7 @@
                   <Image url="@../img/logo.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnBackToLogin" layoutX="251.0" layoutY="490.0" mnemonicParsing="false" onAction="#backToLogin" style="-fx-background-color: none;" text="I already have an account" textFill="WHITE">
+            <Button fx:id="btnBackToLogin" layoutX="255.0" layoutY="489.0" mnemonicParsing="false" onAction="#backToLogin" style="-fx-background-color: none;" text="Saya sudah punya akun." textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
