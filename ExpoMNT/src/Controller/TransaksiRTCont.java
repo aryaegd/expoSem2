@@ -46,6 +46,9 @@ public class TransaksiRTCont implements Initializable {
     private TableColumn<Barang, Double> colHarga;
 
     @FXML
+    private TableColumn<Barang, String> colStatus;
+
+    @FXML
     private Pane pnFormEdt;
 
     @FXML
@@ -70,6 +73,8 @@ public class TransaksiRTCont implements Initializable {
     private TableView<Barang> tvListBrg;
 
     private ObservableList<Barang> barangList;
+
+    // private ObservableList<Persetujuan> persetujuanList;
 
     private Parent root;
 
@@ -116,20 +121,20 @@ public class TransaksiRTCont implements Initializable {
     void pilihanSetuju(ActionEvent event) {
         if (rbSetuju.isSelected()) {
             String kodeBrg = tfTrKodeBrg.getText();
-            String namaBrg = tfTrNamaBrg.getText();
-            
-            // Memperbarui nama barang di dalam ObservableList
+            String status = "Setuju";
+        
+            // Memperbarui nama dan status barang di dalam ObservableList
             for (Barang barang : barangList) {
                 if (barang.getKodeBrg().equals(kodeBrg)) {
-                    barang.setNamaBrg("[SETUJU] " + namaBrg);
-                    
+                    barang.setStatus(status);
+        
                     // Memperbarui data di database
-                    updateNamaBarang(barang.getKodeBrg(), barang.getNamaBrg());
-                    
+                    updateBarang(barang);
+        
                     break;
                 }
             }
-
+        
             lbStatus.setText("Anda setuju dengan tawaran.");
             // Memperbarui TableView
             tvListBrg.refresh();
@@ -137,22 +142,25 @@ public class TransaksiRTCont implements Initializable {
             tfTrNamaBrg.clear();
             tfTrHargaBrg.clear();
         }
+        
     }
 
-    private void updateNamaBarang(String kodeBrg, String namaBrg) {
+    private void updateBarang(Barang barang) {
         DatabaseConnection databaseConnection = new DatabaseConnection();
         try {
             Connection connection = databaseConnection.getConnection();
-            String query = "UPDATE databarang SET namaBrg = ? WHERE kodeBrg = ?";
+            String query = "UPDATE databarang SET namaBrg = ?, status = ? WHERE kodeBrg = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, namaBrg);
-            preparedStatement.setString(2, kodeBrg);
+            preparedStatement.setString(1, barang.getNamaBrg());
+            preparedStatement.setString(2, barang.getStatus());
+            preparedStatement.setString(3, barang.getKodeBrg());
             preparedStatement.executeUpdate();
             preparedStatement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+    
 
 
 
@@ -204,6 +212,7 @@ public class TransaksiRTCont implements Initializable {
         colKode.setCellValueFactory(new PropertyValueFactory<>("kodeBrg"));
         colNama.setCellValueFactory(new PropertyValueFactory<>("namaBrg"));
         colHarga.setCellValueFactory(new PropertyValueFactory<>("hargaBrg"));
+        colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         showDataFromDatabase();
     }
@@ -212,7 +221,7 @@ public class TransaksiRTCont implements Initializable {
         DatabaseConnection databaseConnection = new DatabaseConnection();
         try {
             Connection connection = databaseConnection.getConnection();
-            ResultSet resultSet = connection.createStatement().executeQuery("SELECT kodeBrg, namaBrg, hargaBrg FROM databarang WHERE hargaBrg > 0.0");
+            ResultSet resultSet = connection.createStatement().executeQuery("SELECT kodeBrg, namaBrg, hargaBrg, status FROM databarang WHERE hargaBrg > 0.0");
 
             barangList = FXCollections.observableArrayList();
 
@@ -220,8 +229,10 @@ public class TransaksiRTCont implements Initializable {
                 String kodeBrg = resultSet.getString("kodeBrg");
                 String namaBrg = resultSet.getString("namaBrg");
                 Double hargaBrg = resultSet.getDouble("hargaBrg");
+                String status = resultSet.getString("status");
 
                 Barang barang = new Barang(kodeBrg, namaBrg, null, 0.0, null, hargaBrg);
+                barang.setStatus(status);
                 barangList.add(barang);
             }
 

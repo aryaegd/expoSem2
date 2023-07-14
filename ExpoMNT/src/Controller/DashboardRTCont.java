@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import Model.Barang;
+import Model.Persetujuan;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -37,6 +38,9 @@ public class DashboardRTCont implements Initializable {
 
     @FXML
     private Button btnTransaksi;
+
+    @FXML
+    private Button btnRiwayatRT;
 
     @FXML
     private Label lblDashboard;
@@ -89,7 +93,12 @@ public class DashboardRTCont implements Initializable {
     @FXML
     private TableColumn<Barang, Double> colHarga;
 
+    @FXML
+    private TableColumn<Barang, String> colStatus;
+
     private ObservableList<Barang> barangList;
+
+    private ObservableList<Persetujuan> persetujuanList;
 
     private Stage stage;
 
@@ -105,6 +114,7 @@ public class DashboardRTCont implements Initializable {
         colBerat.setCellValueFactory(new PropertyValueFactory<>("beratBrg"));
         colLokasi.setCellValueFactory(new PropertyValueFactory<>("lokasiBrg"));
         colHarga.setCellValueFactory(new PropertyValueFactory<>("hargaBrg"));
+        colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         showDataFromDatabase();
     }
@@ -114,9 +124,10 @@ public class DashboardRTCont implements Initializable {
         try {
             Connection connection = databaseConnection.getConnection();
             ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM databarang");
-            
+    
             barangList = FXCollections.observableArrayList();
-            
+            persetujuanList = FXCollections.observableArrayList();
+    
             while (resultSet.next()) {
                 String kodeBrg = resultSet.getString("kodeBrg");
                 String namaBrg = resultSet.getString("namaBrg");
@@ -124,11 +135,16 @@ public class DashboardRTCont implements Initializable {
                 double beratBrg = resultSet.getDouble("beratBrg");
                 String lokasiBrg = resultSet.getString("lokasiBrg");
                 Double hargaBrg = resultSet.getDouble("hargaBrg");
-                
+                String status = resultSet.getString("status");
+    
                 Barang barang = new Barang(kodeBrg, namaBrg, jenisBrg, beratBrg, lokasiBrg, hargaBrg);
+                barang.setStatus(status);
                 barangList.add(barang);
+    
+                Persetujuan persetujuan = new Persetujuan(kodeBrg, status);
+                persetujuanList.add(persetujuan);
             }
-            
+    
             tvListBrg.setItems(barangList);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -176,6 +192,20 @@ public class DashboardRTCont implements Initializable {
         showDataFromDatabase();
     }
 
+    @FXML
+    void riwayatRT(ActionEvent event) {
+        try {
+            root = FXMLLoader.load(getClass().getResource("/Views/RiwayatRT.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    
     private void insertBarang(Barang barang) {
         DatabaseConnection databaseConnection = new DatabaseConnection();
         try {

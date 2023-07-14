@@ -27,7 +27,7 @@ public class Main extends Application {
             primaryStage.show();
         
         } catch (IOException e) {
-            System.out.println("ERROR");
+            System.out.println("ERROR nih disini");
             e.printStackTrace();
         }
     }
@@ -36,4 +36,3 @@ public class Main extends Application {
         launch(args);
     }
 }
-

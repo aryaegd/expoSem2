@@ -64,8 +64,9 @@
                   <TableView fx:id="tvListBrg" prefHeight="435.0" prefWidth="700.0">
                      <columns>
                         <TableColumn fx:id="colKode" prefWidth="47.0" text="Kode" />
-                        <TableColumn fx:id="colNama" prefWidth="295.0" text="Nama Barang" />
-                        <TableColumn fx:id="colHarga" minWidth="0.0" prefWidth="343.0" text="Tawaran Harga (Rp)" />
+                        <TableColumn fx:id="colNama" prefWidth="247.0" text="Nama Barang" />
+                        <TableColumn fx:id="colHarga" maxWidth="301.0" minWidth="0.0" prefWidth="178.0" text="Tawaran Harga (Rp)" />
+                        <TableColumn fx:id="colStatus" maxWidth="366.0" minWidth="0.0" prefWidth="212.0" text="Status" />
                      </columns>
                   </TableView>
                </children>

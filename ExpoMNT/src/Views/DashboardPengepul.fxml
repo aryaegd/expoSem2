@@ -12,7 +12,7 @@
    <children>
       <Pane layoutX="23.0" layoutY="16.0" prefHeight="688.0" prefWidth="322.0" style="-fx-background-color: #e3a20a; -fx-background-radius: 20;" AnchorPane.bottomAnchor="16.0">
          <children>
-            <Button fx:id="btnTransaksiPengepul" layoutX="76.0" layoutY="407.0" mnemonicParsing="false" onAction="#transaksiPengepul" prefHeight="66.0" prefWidth="172.0" stylesheets="@../values/CariBarangP.css" text="Transaksi" textFill="WHITE">
+            <Button fx:id="btnTransaksiPengepul" layoutX="76.0" layoutY="391.0" mnemonicParsing="false" onAction="#transaksiPengepul" prefHeight="66.0" prefWidth="172.0" stylesheets="@../values/CariBarangP.css" text="Transaksi" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font></Button>
@@ -30,6 +30,11 @@
                   <Image url="@../img/logo.png" />
                </image>
             </ImageView>
+            <Button fx:id="btnRiwayatPengepul" layoutX="75.0" layoutY="471.0" mnemonicParsing="false" onAction="#riwayatPengepul" prefHeight="66.0" prefWidth="172.0" stylesheets="@../values/CariBarangP.css" text="Riwayat" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
       <Label layoutX="368.0" layoutY="41.0" text="Selamat Datang!" textFill="#e3a20a">

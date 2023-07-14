@@ -7,6 +7,7 @@ public class Barang {
     private double beratBrg;
     private String lokasiBrg;
     private Double hargaBrg;
+    private String status;
 
     public Barang(String kodeBrg, String namaBrg, String jenisBrg, double beratBrg, String lokasiBrg, Double hargaBrg) {
         this.kodeBrg = kodeBrg;
@@ -65,5 +66,13 @@ public class Barang {
         this.hargaBrg = hargaBrg;
     }
 
+    
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
     
 }

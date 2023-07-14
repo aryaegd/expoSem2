@@ -37,6 +37,11 @@
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
+            <Button fx:id="btnRiwayatRT" layoutX="86.0" layoutY="440.0" mnemonicParsing="false" onAction="#riwayatRT" prefHeight="54.0" prefWidth="150.0" stylesheets="@../values/DashboardRT.css" text="Riwayat" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
       <Pane fx:id="pnlOverview" layoutX="354.0" layoutY="7.0" prefHeight="720.0" prefWidth="926.0">
@@ -78,9 +83,10 @@
                               <TableColumn fx:id="colKode" prefWidth="47.0" text="Kode" />
                               <TableColumn fx:id="colNama" prefWidth="147.0" text="Nama Barang" />
                               <TableColumn fx:id="colJenis" prefWidth="106.0" text="Jenis" />
-                              <TableColumn fx:id="colBerat" minWidth="6.6666259765625" prefWidth="89.0" text="Berat (Kg)" />
-                              <TableColumn fx:id="colLokasi" maxWidth="211.0" prefWidth="160.0" text="Lokasi" />
-                              <TableColumn fx:id="colHarga" minWidth="0.0" prefWidth="134.0" text="Tawaran Harga (Rp)" />
+                              <TableColumn fx:id="colBerat" minWidth="6.6666259765625" prefWidth="62.0" text="Berat (Kg)" />
+                              <TableColumn fx:id="colLokasi" maxWidth="211.0" prefWidth="106.0" text="Lokasi" />
+                              <TableColumn fx:id="colHarga" maxWidth="211.0" minWidth="0.0" prefWidth="121.0" text="Tawaran Harga (Rp)" />
+                              <TableColumn fx:id="colStatus" maxWidth="98.0" minWidth="0.0" prefWidth="98.0" text="Status" />
                            </columns>
                         </TableView>
                      </children>

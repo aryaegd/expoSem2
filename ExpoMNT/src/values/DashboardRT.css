@@ -109,7 +109,3 @@
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em;
 }
-
-#btnHapusBrg{
-    -fx-background-image: url("ExpoMNT/src/icons/icons8_cancel_208px.png");
-}

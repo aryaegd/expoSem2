@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import Model.Barang;
+import Model.Riwayat;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -49,6 +50,9 @@ public class TransaksiPengepulCont implements Initializable {
     private TableColumn<Barang, Double> colHarga;
 
     @FXML
+    private TableColumn<Barang, String> colStatus;
+
+    @FXML
     private ImageView imgTF;
 
     @FXML
@@ -73,6 +77,7 @@ public class TransaksiPengepulCont implements Initializable {
     private TableView<Barang> tvListBrg;
 
     private ObservableList<Barang> barangList;
+    private ObservableList<Riwayat> riwayatList = FXCollections.observableArrayList();
 
     private Stage stage;
 
@@ -144,11 +149,30 @@ public class TransaksiPengepulCont implements Initializable {
         }
 
         if (selectedBarang != null) {
-            deleteBarang(selectedBarang);
+            moveDataToRiwayattr(selectedBarang); // Pindahkan data ke tabel riwayattr
+            deleteBarang(selectedBarang); // Hapus data dari tabel databarang
             clearFields();
             showDataFromDatabase();
             imgTF.setVisible(false);
             lbCOD.setVisible(false);
+        }
+    }
+    
+    private void moveDataToRiwayattr(Barang barang) {
+        DatabaseConnection databaseConnection = new DatabaseConnection();
+        try {
+            Connection connection = databaseConnection.getConnection();
+            String query = "INSERT INTO riwayattr (namaBrg, hargaBrg) VALUES (?, ?)";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, barang.getNamaBrg());  
+            preparedStatement.setDouble(2, barang.getHargaBrg());
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+            
+            Riwayat riwayat = new Riwayat(barang.getNamaBrg(), barang.getHargaBrg());
+            riwayatList.add(riwayat);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -178,6 +202,7 @@ public class TransaksiPengepulCont implements Initializable {
         colKode.setCellValueFactory(new PropertyValueFactory<>("kodeBrg"));
         colNama.setCellValueFactory(new PropertyValueFactory<>("namaBrg"));
         colHarga.setCellValueFactory(new PropertyValueFactory<>("hargaBrg"));
+        colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         showDataFromDatabase();
         // Inisialisasi tersembunyi
@@ -189,25 +214,28 @@ public class TransaksiPengepulCont implements Initializable {
         DatabaseConnection databaseConnection = new DatabaseConnection();
         try {
             Connection connection = databaseConnection.getConnection();
-            ResultSet resultSet = connection.createStatement().executeQuery("SELECT kodeBrg, namaBrg, hargaBrg FROM databarang WHERE hargaBrg > 0.0");
-    
+            ResultSet resultSet = connection.createStatement().executeQuery("SELECT kodeBrg, namaBrg, hargaBrg, status FROM databarang WHERE hargaBrg > 0.0");
+
             barangList = FXCollections.observableArrayList();
-    
+
             while (resultSet.next()) {
                 String kodeBrg = resultSet.getString("kodeBrg");
                 String namaBrg = resultSet.getString("namaBrg");
                 Double hargaBrg = resultSet.getDouble("hargaBrg");
-    
-                if (namaBrg.contains("[SETUJU]")) {
-                    Barang barang = new Barang(kodeBrg, namaBrg, null, 0.0, null, hargaBrg);
-                    barangList.add(barang);
-                }
+                String status = resultSet.getString("status");
+
+                Barang barang = new Barang(kodeBrg, namaBrg, null, 0.0, null, hargaBrg);
+                barang.setStatus(status);
+                barangList.add(barang);
             }
-    
+
             tvListBrg.setItems(barangList);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
     
+    public ObservableList<Riwayat> getRiwayatList() {
+        return riwayatList;
+    }
 }
